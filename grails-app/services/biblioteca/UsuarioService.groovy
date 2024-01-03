@@ -1,18 +1,11 @@
 package biblioteca
 
-import grails.gorm.services.Service
+import grails.gorm.transactions.Transactional
 
-@Service(Usuario)
-interface UsuarioService {
+@Transactional
+class UsuarioService {
 
-    Usuario get(Serializable id)
+    def serviceMethod() {
 
-    List<Usuario> list(Map args)
-
-    Long count()
-
-    void delete(Serializable id)
-
-    Usuario save(Usuario usuario)
-
+    }
 }

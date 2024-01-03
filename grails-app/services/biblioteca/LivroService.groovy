@@ -1,18 +1,11 @@
 package biblioteca
 
-import grails.gorm.services.Service
+import grails.gorm.transactions.Transactional
 
-@Service(Livro)
-interface LivroService {
+@Transactional
+class LivroService {
 
-    Livro get(Serializable id)
+    def save(Livro livro) {
 
-    List<Livro> list(Map args)
-
-    Long count()
-
-    void delete(Serializable id)
-
-    Livro save(Livro livro)
-
+    }
 }

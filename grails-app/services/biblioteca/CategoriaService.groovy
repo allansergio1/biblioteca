@@ -1,18 +1,11 @@
 package biblioteca
 
-import grails.gorm.services.Service
+import grails.gorm.transactions.Transactional
 
-@Service(Categoria)
-interface CategoriaService {
+@Transactional
+class CategoriaService {
 
-    Categoria get(Serializable id)
+    def serviceMethod() {
 
-    List<Categoria> list(Map args)
-
-    Long count()
-
-    void delete(Serializable id)
-
-    Categoria save(Categoria categoria)
-
+    }
 }
