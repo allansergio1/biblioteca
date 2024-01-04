@@ -14,12 +14,26 @@
                 <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
             </ul>
         </div>
-        <div id="show-livro" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+        <div id="show-livro" class="content scaffold-show" role="main" align="center">
+            <h1 align="left"><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="livro" />
+            <ul>
+                <li><strong>Título:</strong> ${livro.titulo}</li>
+                <li><strong>ISBN:</strong> ${livro.isbn}</li>
+                <li><strong>Ano:</strong> ${livro.ano}</li>
+                <li><strong>Páginas:</strong> ${livro.paginas}</li>
+                <li><strong>Preço:</strong> ${livro.preco}</li>
+                <li><strong>Nome do Autor:</strong> ${livro.autor?.nome}</li>
+            </ul>
+
+            <h2>Categorias:</h2>
+            <ul>
+                <g:each in="${livro.categorias}" var="categoria">
+                    <li>${categoria.nome}</li>
+                </g:each>
+            </ul>
             <g:form resource="${this.livro}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.livro}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
